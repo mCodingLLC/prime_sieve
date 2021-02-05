@@ -13,7 +13,7 @@ Usage
     # sieve = PrimeListSieve()
 
     print(sieve.nth_prime(0)) # 2
-    print(sieve[4]) #  7
+    print(sieve[4]) # 7
 
     print(sieve[:100]) # [2, 3, ..., 541]
     print(sieve[1:6]) # [3, 5, 7, 11, 13]
