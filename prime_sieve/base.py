@@ -24,11 +24,12 @@ class SegmentedPrimeSieve(ABC):
     @abstractmethod
     def _extend(self) -> None:
         """
-        Extends the _primes in the range [p_k^2, p_{k+n}^2) for some n, where k is the end segment index.
-        The range [p_k^2, p_{k+n}^2) is sieved by [p_0, ..., p_{k+n-1}]
+        Extends the currently computed primes with the primes in the range [p_k^2, p_{k+n}^2) for some n,
+        where k is the end segment index.
+        Note: the range [p_k^2, p_{k+n}^2) is sieved by [p_0, ..., p_{k+n-1}]
         because if a composite number n has all prime factors >= p_{k+n}, then n >= p_{k+n}^2.
-        Precondition: _primes contains all _primes in the range [2, p_k^2) and no more.
-        Postcondition: _primes contains all _primes in the range [2, p_{k+n}^2)  for some n and no more.
+        Precondition: primes contains all primes in the range [2, p_k^2) and no more.
+        Postcondition: primes contains all primes in the range [2, p_{k+n}^2)  for some n and no more.
         """
         pass
 
@@ -93,7 +94,7 @@ class SegmentedPrimeSieve(ABC):
         """
         Returns a read-only view of primes in range(n,m), i.e. primes p with n <= p < m.
         Primes are computed as necessary.
-        Do not modify the contents of the returned range.
+        Do not modify the contents of the returned range, make a copy if necessary.
         :param n: The lower bound (inclusive) of primes to compute.
         :param m: The upper bound (exclusive) of primes to compute.
         :return: A read-only sequence of prime p with n <= p < m.
