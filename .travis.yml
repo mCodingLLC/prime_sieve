@@ -22,7 +22,12 @@ deploy:
   distributions: sdist bdist_wheel
   user: mCoding
   password:
-    secure: PLEASE_REPLACE_ME
+    secure: "rOUwDA8PgwzbKiuRUHqjzEB2YsssMVeadtBlpn7/vM3B9DetNvU8EM/wWNGriwSXKega6ZyES8xOAt+uFFZZgQysVVxC+i0/W6G0GtyW8I2bW2mhq7ptUvgYhQI0SEA
+            JcbV5UY5cPMGlpFi1us24X7xZbQSZksCTLBEN5Ge0XZt7FPgeaOJH5PCIqIG6VwzCau9d3ja/LkxvnkiQvmqKfyu553wq0Af6ttHrLOwsnNplHjxlt8KwHk7NzbAsjLEv7oKnvx5fG
+            OGhwaCLANdOvsoJ398CDplVQRnINPDft1wlXxr5xzZUdXWf+OaaIdVk38+mEgsbKEbaJtr+hFeLC9p5VggN8eS5dWCd2M+dOF1u60mqE6ie2KwbgAMPoVgQHiwSBAdgKsGLK4ZlL2N
+            FPKSYk4CaQcq7q+914DAOX35HdquWqj5Y5/lvb5hWJTekbhIkZSQkysZBNzEYpUKLfLKIFK0ougSbZp6wNSpLuEbNIbcN52aGtL/P29nSq+iJT2BZYzpkxBI1npIetzOulfekG30GZ
+            z3QzzNbtscfVmtApCLh4EOnrTDFSc+cj8eiyWswkkYhcVBCgm5VOO9g/zXszqP/sxHblpxZi1hYrx6Nc5rOvQbIDfu3YGX4ILpnxgON9lNj+RhF590PLeviDTnU0Kf7kk4y/J3oZ+8
+            byaY="
   on:
     tags: true
     repo: mCodingLLC/prime_sieve
