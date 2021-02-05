@@ -1,33 +1,17 @@
-# Config file for automatic testing at travis-ci.com
-
 language: python
 python:
-  - 3.9
-  - 3.8
-  - 3.7
-  - 3.6
-
-# Command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
+- 3.9
+- 3.8
+- 3.7
+- 3.6
 install: pip install -U tox-travis
-
-# Command to run tests, e.g. python setup.py test
 script: tox
-
-# Assuming you have installed the travis-ci CLI tool, after you
-# create the Github repo and add it to Travis, run the
-# following command to finish PyPI deployment setup:
-# $ travis encrypt --add deploy.password
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
-  user: mCoding
+  username: __token__
   password:
-    secure: "rOUwDA8PgwzbKiuRUHqjzEB2YsssMVeadtBlpn7/vM3B9DetNvU8EM/wWNGriwSXKega6ZyES8xOAt+uFFZZgQysVVxC+i0/W6G0GtyW8I2bW2mhq7ptUvgYhQI0SEA
-            JcbV5UY5cPMGlpFi1us24X7xZbQSZksCTLBEN5Ge0XZt7FPgeaOJH5PCIqIG6VwzCau9d3ja/LkxvnkiQvmqKfyu553wq0Af6ttHrLOwsnNplHjxlt8KwHk7NzbAsjLEv7oKnvx5fG
-            OGhwaCLANdOvsoJ398CDplVQRnINPDft1wlXxr5xzZUdXWf+OaaIdVk38+mEgsbKEbaJtr+hFeLC9p5VggN8eS5dWCd2M+dOF1u60mqE6ie2KwbgAMPoVgQHiwSBAdgKsGLK4ZlL2N
-            FPKSYk4CaQcq7q+914DAOX35HdquWqj5Y5/lvb5hWJTekbhIkZSQkysZBNzEYpUKLfLKIFK0ougSbZp6wNSpLuEbNIbcN52aGtL/P29nSq+iJT2BZYzpkxBI1npIetzOulfekG30GZ
-            z3QzzNbtscfVmtApCLh4EOnrTDFSc+cj8eiyWswkkYhcVBCgm5VOO9g/zXszqP/sxHblpxZi1hYrx6Nc5rOvQbIDfu3YGX4ILpnxgON9lNj+RhF590PLeviDTnU0Kf7kk4y/J3oZ+8
-            byaY="
+    secure: X3tGlUBSR0kGbyCnwzWFf6Ch2xO5jj++imKWY4tfl1QioNgtkKvjPlZbbXvdwT+1ppMei6OJB1W+qvDTxba52PvpHlsRXbAk0RI6RXhTBOCmXoYu7bTEgps6otSOVI92YulIlO7K/e/+h45cdnP/o/hhOXUa17wOuKVgUKmBAdmquphRWckj8hIUWeQyI5PL8R0ICz+t1a+9q/KEtUcopqsCkZWiXcT7zvVOCVXPbyyPv6UIPIExY6ejAkv8ODqLfKk6yCbuSWmqbKMRr59Lq8QLpeDnEgaOkPkeAI6DU/QGl+N6BcQyVHI2CgBUKH+UGy8P4OZ7IMANaIb8fSZUN0opQYnZ9TAaHmOqVVRe0PwqqBAqPuZxpuBKBVdoMkWTT+gPaIdVu7lw+qysE88H+Gf0Qq8z9b32JBKJaLNBoVHwLkvMZh20sTxsQqAnT/c1nGkZYHatJjyD+lqp3GE3ktmx1/Onk/vW/TQkCmZaaOQoU1/DljDM8X6yI3xQObS5r0EnjIfvm3twe4nIVbh4uJZ9vV5PU+yv5ElKXDbUqN8YxVdqNLGb84W3BIrdEtoyIiMXlmojF3ipUaDNhOSF0tHOw6G7D7ig0gPw/Hzy7681wrogbhtSpfHdHupq9j3yoHrfUNGEW+ccEABVuC7G0AsRawhYg9CiOUHLB99cSd0=
   on:
     tags: true
     repo: mCodingLLC/prime_sieve
