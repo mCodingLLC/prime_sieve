@@ -114,7 +114,7 @@ class SegmentedPrimeSieve(ABC):
         idx = bisect_right(self.primes, n)
         return idx
 
-    def index(self, p: int) -> int:
+    def index_of(self, p: int) -> int:
         """
         Return the index i of a prime p such that p = p_i.
         :return: The index i such that p = p_i

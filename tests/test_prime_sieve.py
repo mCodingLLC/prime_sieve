@@ -244,7 +244,7 @@ def test_find_primes_until(sieve):
 
 @pytest.mark.parametrize("expected,test_input", enumerate(first_100_primes))
 def test_index_of_prime(test_input, expected, sieve):
-    assert sieve.index(test_input) == expected
+    assert sieve.index_of(test_input) == expected
 
 
 @pytest.mark.parametrize("test_input", [0, 4, 6, 9, 25, 2 ** 10 + 2])
