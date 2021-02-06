@@ -6,8 +6,8 @@ Prime Sieve
 .. image:: https://img.shields.io/pypi/v/prime_sieve.svg
         :target: https://pypi.python.org/pypi/prime_sieve
 
-.. image:: https://img.shields.io/travis/mCodingLLC/prime_sieve.svg
-        :target: https://travis-ci.com/mCodingLLC/prime_sieve
+.. image:: https://travis-ci.com/mCodingLLC/prime_sieve.svg?branch=master
+    :target: https://travis-ci.com/mCodingLLC/prime_sieve
 
 .. image:: https://readthedocs.org/projects/prime-sieve/badge/?version=latest
         :target: https://prime-sieve.readthedocs.io/en/latest/?badge=latest
