@@ -83,7 +83,7 @@ todo_include_todos = False
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = 'default'
 
 # Theme options are theme-specific and customize the look and feel of a
 # theme further.  For a list of options available for each theme, see the
@@ -154,7 +154,7 @@ texinfo_documents = [
      'Prime Sieve Documentation',
      author,
      'prime_sieve',
-     'One line description of project.',
+     'An understandable prime sieve implementation in numpy or pure python.',
      'Miscellaneous'),
 ]
 
