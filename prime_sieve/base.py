@@ -103,7 +103,7 @@ class SegmentedPrimeSieve(ABC):
         end = self.index_of_prev_prime_less_than(m) + 1
         return self.primes[start:end]
 
-    def index_of_next_prime_greater_than(self, n):
+    def index_of_next_prime_greater_than(self, n: int) -> int:
         """
         Return the index i of the smallest prime p_i with p_i > n.
         Primes are computed as necessary.
@@ -112,6 +112,16 @@ class SegmentedPrimeSieve(ABC):
         """
         self.ensure_max_greater_or_equal(n + 1)
         idx = bisect_right(self.primes, n)
+        return idx
+
+    def index(self, p: int) -> int:
+        """
+        Return the index i of a prime p such that p = p_i.
+        :return: The index i such that p = p_i
+        """
+        idx = self.index_of_next_prime_greater_than(p - 1)
+        if p != self.primes[idx]:
+            raise ValueError("not a prime")
         return idx
 
     def next_prime_greater_than(self, n: int):
@@ -124,7 +134,7 @@ class SegmentedPrimeSieve(ABC):
         idx = self.index_of_next_prime_greater_than(n)
         return self.primes[idx]
 
-    def index_of_prev_prime_less_than(self, n):
+    def index_of_prev_prime_less_than(self, n: int) -> int:
         """
         Return the index i of the largest prime p_i with p_i < n.
         Primes are computed as necessary.
