@@ -21,6 +21,16 @@ The focus is providing a sieve that is easy to understand rather than the absolu
 Though the numpy implementation is reasonably quick,
 being able to compute the first 100 million primes in 30 seconds on my mid-tier laptop.
 
+This library implements a version of the
+`segmented sieve of Eratosthenes <https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#Segmented_sieve>`_.
+
+First take a look at the pure python implementation in `<prime_sieve/list.py>`_.
+Then see the numpy implementation in `<prime_sieve/array.py>`_.
+Sieve operations that are independent of the actual computation of primes,
+such as looking up the nth-prime number,
+are found in `<prime_sieve/base.py>`_.
+
+
 * Free software: MIT license
 * Documentation: https://prime-sieve.readthedocs.io.
 
