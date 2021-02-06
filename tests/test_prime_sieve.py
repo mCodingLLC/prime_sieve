@@ -250,4 +250,4 @@ def test_index_of_prime(test_input, expected, sieve):
 @pytest.mark.parametrize("test_input", [0, 4, 6, 9, 25, 2 ** 10 + 2])
 def test_index_of_not_prime_raises(test_input, sieve):
     with pytest.raises(ValueError):
-        sieve.index(test_input)
+        sieve.index_of(test_input)
