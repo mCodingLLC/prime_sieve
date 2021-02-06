@@ -60,7 +60,7 @@ class SegmentedPrimeSieve(ABC):
         if isinstance(item, int):
             return self.nth_prime(item)
         elif isinstance(item, slice):
-            self.ensure_len_greater_or_equal(slice.stop)
+            self.ensure_len_greater_or_equal(item.stop)
             return self.primes[item]
 
     def iter_all_primes(self):

@@ -42,6 +42,16 @@ def test_nth_prime(test_input, expected, sieve):
     assert sieve.nth_prime(test_input) == expected
 
 
+@pytest.mark.parametrize("test_input,expected", enumerate(first_100_primes))
+def test_getitem_nth_prime(test_input, expected, sieve):
+    assert sieve[test_input] == expected
+
+
+@pytest.mark.parametrize("test_input", [slice(0, 10), slice(4, 19), slice(4, 4), slice(6, 5), slice(5, 20)])
+def test_getitem_slice(test_input, sieve):
+    assert list(sieve[test_input]) == first_100_primes[test_input]
+
+
 @pytest.mark.parametrize("test_input,expected",
                          [(0, False),
                           (1, False),
@@ -58,6 +68,24 @@ def test_nth_prime(test_input, expected, sieve):
                           (2 ** 13 - 1, True)])
 def test_is_prime(test_input, expected, sieve):
     assert sieve.is_prime(test_input) == expected
+
+
+@pytest.mark.parametrize("test_input,expected",
+                         [(0, False),
+                          (1, False),
+                          (2, True),
+                          (3, True),
+                          (4, False),
+                          (5, True),
+                          (6, False),
+                          (97, True),
+                          (100, False),
+                          (100 * 200, False),
+                          (86 * 97, False),
+                          (2 ** 11 - 1, False),
+                          (2 ** 13 - 1, True)])
+def test_is_prime__contains__alias(test_input, expected, sieve):
+    assert (test_input in sieve) == expected
 
 
 @pytest.mark.parametrize("test_input,expected",
@@ -188,3 +216,27 @@ def test_numpy_overflow_error(dtype):
     max = np.iinfo(dtype).max
     with pytest.raises(RuntimeError):
         sieve.ensure_max_greater_or_equal(max)
+
+
+def test_iter_all_primes(sieve):
+    primes_found = []
+    for p in sieve.iter_all_primes():
+        primes_found.append(p)
+        if p % 60 == 1:
+            break
+    assert primes_found == first_100_primes[:18]
+
+
+def test_find_primes_until(sieve):
+    def stop_cb(s):
+        return len(s) >= 100
+
+    call_count = 0
+
+    def progress_cb(s):
+        nonlocal call_count
+        call_count += 1
+
+    sieve.find_primes_until(stop_cb, progress_cb)
+    assert len(sieve) >= 100
+    assert call_count > 0
