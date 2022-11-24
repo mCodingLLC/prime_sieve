@@ -6,4 +6,4 @@ def smallest_multiple_of_n_geq_m(n: int, m: int) -> int:
     :param m: A non-negative integer.
     :return: The smallest multiple of n that is greater or equal to m.
     """
-    return m + ((n - (m % n)) % n)
+    return m + -m % n
